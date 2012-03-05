@@ -1,4 +1,4 @@
-package DigitalClock;
+package GUITools;
 
 import java.awt.*;
 import javax.swing.*;

@@ -1,4 +1,4 @@
-package DigitalClock;
+package GUITools;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -22,7 +22,7 @@ public class DigitalClockComponent extends JComponent implements Runnable {
 	private int width = 0;
 	private Color digitColor;
 	private int digitSize = 0;
-	private Font digitFont = GUITools.loadTTFFontFromFile("Geo.ttf");
+	private Font digitFont;// = GUITools.loadTTFFontFromFile("Geo.ttf", 10);
 	private Thread runner;
 	
 	public DigitalClockComponent(Color digitColor, int digitSize, Font digitFont){
@@ -55,7 +55,7 @@ public class DigitalClockComponent extends JComponent implements Runnable {
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         g2.setFont(this.digitFont);
         g2.setColor(this.digitColor);//this.digitColor);
-        g2.drawString(this.digitalClock.timeNow(), 15, this.digitSize);
+        g2.drawString(this.digitalClock.timeNow(), 15, this.digitSize + 5);
 	}
 	
 	public void start(){
